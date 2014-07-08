@@ -1,0 +1,30 @@
+{
+    "name" : "Circle/UtlityBundle",
+    "description" : "Contains utilities like queues or trees",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Circle.ai",
+        "email" : "info@circle.ai"
+    }],
+    "keywords" : [
+        "utlities tree trees queue multi child tree immutable container"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+    	"php": ">=5.3.2",
+        "symfony/framework-bundle": "~2.1"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Circle\\UtlityBundle" : ""
+        }
+    },
+    "target-dir" : "Circle/UtlityBundle",
+    "extra" : {
+    "branch-alias" : {
+            "dev-master" : "1.0-dev"
+        }
+    }
+}
