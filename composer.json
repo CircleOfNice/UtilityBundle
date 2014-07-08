@@ -1,5 +1,5 @@
 {
-    "name" : "Circle/UtlityBundle",
+    "name" : "circle/utlitybundle",
     "description" : "Contains utilities like queues or trees",
     "type" : "symfony-bundle",
     "authors" : [{
@@ -18,7 +18,7 @@
     },
     "autoload" : {
         "psr-0" : {
-            "Circle\\UtlityBundle" : ""
+            "Ci\\UtilityBundle" : ""
         }
     },
     "target-dir" : "Circle/UtlityBundle",
