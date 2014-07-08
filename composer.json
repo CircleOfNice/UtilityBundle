@@ -1,5 +1,5 @@
 {
-    "name" : "circle/utlitybundle",
+    "name" : "ci/utilitybundle",
     "description" : "Contains utilities like queues or trees",
     "type" : "symfony-bundle",
     "authors" : [{
@@ -21,7 +21,7 @@
             "Ci\\UtilityBundle" : ""
         }
     },
-    "target-dir" : "Circle/UtlityBundle",
+    "target-dir" : "Ci/UtilityBundle",
     "extra" : {
     "branch-alias" : {
             "dev-master" : "1.0-dev"
