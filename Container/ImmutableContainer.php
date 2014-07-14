@@ -15,6 +15,7 @@ use Ci\UtilityBundle\Exceptions\Exceptions;
  * @package   Ci\UtilityBundle
  * @author    Marco Sliwa <marco.sliwa@teeage-beatz.de>
  * @copyright 2014 TeeAge-Beatz UG (haftungsbeschraenkt)
+ * @license		http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 final class ImmutableContainer implements Container {
 	use Exceptions;
@@ -27,7 +28,7 @@ final class ImmutableContainer implements Container {
 	/**
 	 * constructor takes an array to set all values
 	 * 
-	 * @param		array		$array
+	 * @param  array		$array
 	 * 
 	 */
 	public function __construct(array $array) {
@@ -38,7 +39,7 @@ final class ImmutableContainer implements Container {
 	 * (non-PHPdoc)
 	 * @see \Ci\UtilityBundle\Interfaces\Container::get()
 	 * 
-	 * @param		string	$key
+	 * @param  string		$key	
 	 */
 	public function get($key) {
 			return $this->has($key) ? $this->collection->get($key) : $this->_noKeyException($key);
@@ -55,8 +56,8 @@ final class ImmutableContainer implements Container {
 	/**
 	 * checks if $key exists
 	 * 
-	 * @param		string	$key
-	 * @return	boolean
+	 * @param  string		$key
+	 * @return boolean
 	 */
 	private function has($key) {
 			return $this->collection->get($key) !== null;
