@@ -10,7 +10,7 @@
         "utlities tree trees queue multi child tree immutable container"
     ],
     "license" : [
-        "MIT"
+        "GPL"
     ],
     "require" : {
     	"php": ">=5.3.2",
