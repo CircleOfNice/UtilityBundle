@@ -13,38 +13,38 @@ use Ci\UtilityBundle\Exceptions\Exceptions;
  * constructor and sets all values of this
  *
  * @package   Ci\UtilityBundle
- * @author    Marco Sliwa <marco.sliwa@teeage-beatz.de>
+ * @author	  Marco Sliwa <marco.sliwa@teeage-beatz.de>
  * @copyright 2014 TeeAge-Beatz UG (haftungsbeschraenkt)
- * @license		http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 final class ImmutableContainer implements Container {
 	use Exceptions;
-	
+
 	/**
 	 * @var	Doctrine\Common\Collections\ArrayCollection stores the values of this container
 	 */
 	private $collection;
-	
+
 	/**
 	 * constructor takes an array to set all values
-	 * 
+	 *
 	 * @param  array		$array
-	 * 
+	 *
 	 */
 	public function __construct(array $array) {
 			$this->collection = new ArrayCollection($array);
 	}
-	
+
 	/**
 	 * (non-PHPdoc)
 	 * @see \Ci\UtilityBundle\Interfaces\Container::get()
-	 * 
-	 * @param  string		$key	
+	 *
+	 * @param  string		$key
 	 */
 	public function get($key) {
 			return $this->has($key) ? $this->collection->get($key) : $this->_noKeyException($key);
 	}
-	
+
 	/**
 	 * (non-PHPdoc)
 	 * @see \Ci\UtilityBundle\Interfaces\Container::toArray()
@@ -52,10 +52,10 @@ final class ImmutableContainer implements Container {
 	public function toArray() {
 			return $this->collection->toArray();
 	}
-	
+
 	/**
 	 * checks if $key exists
-	 * 
+	 *
 	 * @param  string		$key
 	 * @return boolean
 	 */
