@@ -32,7 +32,7 @@ final class ImmutableContainer implements Container {
 	 * @return $this
 	 */
 	public function __construct(array $array) {
-			$this->collection = new ArrayCollection($array);
+		$this->collection = new ArrayCollection($array);
 	}
 
 	/**
@@ -42,7 +42,7 @@ final class ImmutableContainer implements Container {
 	 * @param  string    $key
 	 */
 	public function get($key) {
-			return $this->has($key) ? $this->collection->get($key) : $this->_noKeyException($key);
+		return $this->has($key) ? $this->collection->get($key) : $this->_noKeyException($key);
 	}
 
 	/**
@@ -50,7 +50,7 @@ final class ImmutableContainer implements Container {
 	 * @see \Ci\UtilityBundle\Interfaces\Container::toArray()
 	 */
 	public function toArray() {
-			return $this->collection->toArray();
+		return $this->collection->toArray();
 	}
 
 	/**
@@ -60,6 +60,6 @@ final class ImmutableContainer implements Container {
 	 * @return boolean
 	 */
 	private function has($key) {
-			return $this->collection->get($key) !== null;
+		return $this->collection->get($key) !== null;
 	}
 }
