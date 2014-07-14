@@ -12,9 +12,9 @@ use Ci\UtilityBundle\Exceptions\Exceptions;
  * implementation of container, that takes an array in its
  * constructor and sets all values of this
  *
- * @package    Ci\UtilityBundle
- * @author     Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @copyright  2014 TeeAge-Beatz UG (haftungsbeschraenkt)
+ * @package   Ci\UtilityBundle
+ * @author    Marco Sliwa <marco.sliwa@teeage-beatz.de>
+ * @copyright 2014 TeeAge-Beatz UG (haftungsbeschraenkt)
  */
 final class ImmutableContainer implements Container {
 	use Exceptions;
@@ -27,20 +27,21 @@ final class ImmutableContainer implements Container {
 	/**
 	 * constructor takes an array to set all values
 	 * 
-	 * @param	array	$array
+	 * @param		array		$array
+	 * 
 	 */
 	public function __construct(array $array) {
-		$this->collection = new ArrayCollection($array);
+			$this->collection = new ArrayCollection($array);
 	}
 	
 	/**
 	 * (non-PHPdoc)
 	 * @see \Ci\UtilityBundle\Interfaces\Container::get()
 	 * 
-	 * @param	string	$key
+	 * @param		string	$key
 	 */
 	public function get($key) {
-		return $this->has($key) ? $this->collection->get($key) : $this->_noKeyException($key);
+			return $this->has($key) ? $this->collection->get($key) : $this->_noKeyException($key);
 	}
 	
 	/**
@@ -48,16 +49,16 @@ final class ImmutableContainer implements Container {
 	 * @see \Ci\UtilityBundle\Interfaces\Container::toArray()
 	 */
 	public function toArray() {
-		return $this->collection->toArray();
+			return $this->collection->toArray();
 	}
 	
 	/**
 	 * checks if $key exists
 	 * 
-	 * @param	string	$key
+	 * @param		string	$key
 	 * @return	boolean
 	 */
 	private function has($key) {
-		return $this->collection->get($key) !== null;
+			return $this->collection->get($key) !== null;
 	}
 }
