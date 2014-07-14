@@ -1,8 +1,6 @@
 <?php
 /**
  * immutable container
- *
- * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 namespace Ci\UtilityBundle\Container;
 
@@ -17,6 +15,7 @@ use Ci\UtilityBundle\Exceptions\Exceptions;
  * @package   Ci\UtilityBundle
  * @author    Marco Sliwa <marco.sliwa@teeage-beatz.de>
  * @copyright 2014 TeeAge-Beatz UG (haftungsbeschraenkt)
+ * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 final class ImmutableContainer implements Container {
 	use Exceptions;
@@ -30,6 +29,7 @@ final class ImmutableContainer implements Container {
 	 * constructor takes an array to set all values
 	 *
 	 * @param  array    $array
+	 * @return $this
 	 */
 	public function __construct(array $array) {
 			$this->collection = new ArrayCollection($array);
