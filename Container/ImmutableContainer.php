@@ -1,6 +1,8 @@
 <?php
 /**
  * immutable container
+ *
+ * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 namespace Ci\UtilityBundle\Container;
 
@@ -13,9 +15,8 @@ use Ci\UtilityBundle\Exceptions\Exceptions;
  * constructor and sets all values of this
  *
  * @package   Ci\UtilityBundle
- * @author	  Marco Sliwa <marco.sliwa@teeage-beatz.de>
+ * @author    Marco Sliwa <marco.sliwa@teeage-beatz.de>
  * @copyright 2014 TeeAge-Beatz UG (haftungsbeschraenkt)
- * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 final class ImmutableContainer implements Container {
 	use Exceptions;
@@ -28,8 +29,7 @@ final class ImmutableContainer implements Container {
 	/**
 	 * constructor takes an array to set all values
 	 *
-	 * @param  array		$array
-	 *
+	 * @param  array    $array
 	 */
 	public function __construct(array $array) {
 			$this->collection = new ArrayCollection($array);
@@ -39,7 +39,7 @@ final class ImmutableContainer implements Container {
 	 * (non-PHPdoc)
 	 * @see \Ci\UtilityBundle\Interfaces\Container::get()
 	 *
-	 * @param  string		$key
+	 * @param  string    $key
 	 */
 	public function get($key) {
 			return $this->has($key) ? $this->collection->get($key) : $this->_noKeyException($key);
@@ -56,7 +56,7 @@ final class ImmutableContainer implements Container {
 	/**
 	 * checks if $key exists
 	 *
-	 * @param  string		$key
+	 * @param  string    $key
 	 * @return boolean
 	 */
 	private function has($key) {
