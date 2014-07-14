@@ -12,9 +12,9 @@ use Ci\UtilityBundle\Exceptions\Exceptions;
  * implementation of container, that takes an array in its
  * constructor and sets all values of this
  *
- * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Container
- * @copyright	2014, TeeAge-Beatz UG (haftungsbeschränkt)
+ * @package    Ci\UtilityBundle
+ * @author     Marco Sliwa <marco.sliwa@teeage-beatz.de>
+ * @copyright  2014 TeeAge-Beatz UG (haftungsbeschraenkt)
  */
 final class ImmutableContainer implements Container {
 	use Exceptions;
