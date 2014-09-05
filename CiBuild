@@ -1,0 +1,27 @@
+#!/usr/bin/php
+<?php
+
+$text="";
+if (empty($argv[1])) die();
+	
+putenv('HOME=/root');
+	
+$devPath = '/var/www/vhosts/circle.ai/httpdocs/dev/';
+$projectDir = $devPath . $argv[1];
+	
+$text .= '# cd '. $projectDir . ("\n");
+$text .= shell_exec('cd ' . $devPath) . ("\n");
+chdir($argv[1]);
+
+$text .= '# rm -rf app/cache/*' . ("\n");
+$text .= shell_exec('rm -rf app/cache/*') . ("\n");
+$text .= '# git pull' . ("\n");
+$text .= shell_exec('sudo git pull 2>&1') . ("\n");
+$text .= '# composer update' . ("\n");
+$text .= shell_exec('composer update 2>&1') . ("\n");
+$text .= '# php app/console doctrine:schema:update --force' . ("\n");
+$text .= shell_exec('php app/console doctrine:schema:update --force') . ("\n");
+$text .= '# php app/console assetic:dump' . ("\n");
+$text .= shell_exec('php app/console assetic:dump') . ("\n");
+
+echo $text;
