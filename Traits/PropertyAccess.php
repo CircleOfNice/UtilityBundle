@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,13 +18,13 @@
 /**
  * convenience utility for internally tracking access to properties
  */
-namespace Ci\UtilityBundle\Traits;
+namespace Circle\UtilityBundle\Traits;
 
 /**
  * convenience utility for internally tracking access to properties
  *
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Traits
+ * @package		Circle\UtilityBundle\Traits
  * @copyright	TeeAge-Beatz UG 2014
  */
 trait PropertyAccess {

@@ -2,14 +2,14 @@
 /**
  * trait to throw exceptions
  */
-namespace Ci\UtilityBundle\Exceptions;
+namespace Circle\UtilityBundle\Exceptions;
 
 /**
  * trait with a private function for every bundles exception.
  * this is used to encapsulate the instantiation of the
  * exceptions in one place.
  *
- * @package   Ci\UtilityBundle
+ * @package   Circle\UtilityBundle
  * @author    Marco Sliwa <marco.sliwa@teeage-beatz.de>
  * @copyright 2014 TeeAge-Beatz UG (haftungsbeschraenkt)
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
@@ -23,7 +23,7 @@ trait Exceptions {
 	 * throws a NoKeyException
 	 *
 	 * @param	string												$key
-	 * @throws	Ci\UtilityBundle\Exceptions\NoKeyException
+	 * @throws	Circle\UtilityBundle\Exceptions\NoKeyException
 	 * @return	void
 	 */
 	private function _noKeyException($key) {
@@ -36,7 +36,7 @@ trait Exceptions {
 	 *
 	 * @param	object												$key
 	 * @param	string												$expected
-	 * @throws	Ci\UtilityBundle\Exceptions\WrongKeyTypeException
+	 * @throws	Circle\UtilityBundle\Exceptions\WrongKeyTypeException
 	 * @return	void
 	 */
 	private function _wrongKeyTypeException($key, $expected) {
@@ -48,7 +48,7 @@ trait Exceptions {
 	 * throws an ImmutableException
 	 *
 	 * @param	string												$key
-	 * @throws	Ci\UtilityBundle\Exceptions\ImmutableException
+	 * @throws	Circle\UtilityBundle\Exceptions\ImmutableException
 	 */
 	private function _immutableException($key) {
 		throw new ImmutableException($key);
@@ -60,7 +60,7 @@ trait Exceptions {
 	 *
 	 * @param	object												$class
 	 * @param	string												$method
-	 * @throws	Ci\UtilityBundle\Exceptions\NotInitializedException
+	 * @throws	Circle\UtilityBundle\Exceptions\NotInitializedException
 	 */
 	private function _notInitializedException($class, $method) {
 		throw new NotInitializedException($class, $method);
@@ -73,7 +73,7 @@ trait Exceptions {
 	 * @param	string												$name
 	 * @param	object												$param
 	 * @param	string												$expected
-	 * @throws	Ci\UtilityBundle\Exceptions\WrongTypeException
+	 * @throws	Circle\UtilityBundle\Exceptions\WrongTypeException
 	 */
 	private function _wrongTypeException($name, $param, $expected) {
 		throw new WrongTypeException($name, $param, $expected);

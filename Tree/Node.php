@@ -2,10 +2,10 @@
 /**
  * basic node interface
  */
-namespace Ci\UtilityBundle\Tree;
+namespace Circle\UtilityBundle\Tree;
 
-use Ci\UtilityBundle\Interfaces\GenericType;
-use Ci\UtilityBundle\Interfaces\Printable;
+use Circle\UtilityBundle\Interfaces\GenericType;
+use Circle\UtilityBundle\Interfaces\Printable;
 use Doctrine\Common\Collections\ArrayCollection;
 
 
@@ -14,7 +14,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * basic functions declared
  *
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Tree
+ * @package		Circle\UtilityBundle\Tree
  * @copyright	TeeAge-Beatz UG 2014
  */
 interface Node extends GenericType, Printable {
@@ -23,7 +23,7 @@ interface Node extends GenericType, Printable {
 	 * adds a child at position $key
 	 *
 	 * @param 	string										$key
-	 * @param	Ci\UtilityBundle\Tree\Node					$node
+	 * @param	Circle\UtilityBundle\Tree\Node					$node
 	 * @return 	$this
 	 */
 	public function addChild($key, Node $node);
@@ -34,8 +34,8 @@ interface Node extends GenericType, Printable {
 	 * if no child exists at the given index
 	 *
 	 * @param 	string										$key
-	 * @throws	Ci\UtilityBundle\Exceptions\NoKeyException
-	 * @return	Ci\UtilityBundle\Tree\Node
+	 * @throws	Circle\UtilityBundle\Exceptions\NoKeyException
+	 * @return	Circle\UtilityBundle\Tree\Node
 	 */
 	public function getChild($key);
 	
@@ -52,7 +52,7 @@ interface Node extends GenericType, Printable {
 	 * 
 	 * returns the parent node
 	 * 
-	 * @return	Ci\UtilityBundle\Tree\Node
+	 * @return	Circle\UtilityBundle\Tree\Node
 	 */
 	public function getParent();
 	

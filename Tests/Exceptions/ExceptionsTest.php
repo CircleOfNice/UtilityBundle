@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,23 +18,23 @@
 /**
  * test case for exceptions
  */
-namespace Ci\UtilityBundle\Tests\Exceptions;
+namespace Circle\UtilityBundle\Tests\Exceptions;
 
-use Ci\UtilityBundle\Tests\Fixtures\ExceptionsImpl;
+use Circle\UtilityBundle\Tests\Fixtures\ExceptionsImpl;
 
 /**
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Tests\Exceptions
+ * @package		Circle\UtilityBundle\Tests\Exceptions
  * @copyright	TeeAge-Beatz UG 2013-2014
  * @internal
  * 
- * @coversDefaultClass	Ci\UtilityBundle\Exceptions\Exceptions
+ * @coversDefaultClass	Circle\UtilityBundle\Exceptions\Exceptions
  * 
  * @SuppressWarnings("PHPMD.StaticAccess");
  */
 class ExceptionsTest extends \PHPUnit_Framework_TestCase {
 	/**
-	 * @var Ci\UtilityBundle\Tests\Fixtures\ExceptionsImpl
+	 * @var Circle\UtilityBundle\Tests\Fixtures\ExceptionsImpl
 	 */
 	private $exceptions;
 	
@@ -46,9 +46,9 @@ class ExceptionsTest extends \PHPUnit_Framework_TestCase {
 	 * @test
 	 * @group	small
 	 * @covers	::_immutableException
-	 * @covers	Ci\UtilityBundle\Exceptions\ImmutableException
+	 * @covers	Circle\UtilityBundle\Exceptions\ImmutableException
 	 * 
-	 * @expectedException	Ci\UtilityBundle\Exceptions\ImmutableException
+	 * @expectedException	Circle\UtilityBundle\Exceptions\ImmutableException
 	 */	
 	public function immutableException() {
 		$this->exceptions->immutableException("test");
@@ -58,10 +58,10 @@ class ExceptionsTest extends \PHPUnit_Framework_TestCase {
 	 * @test
 	 * @group	small
 	 * @covers	::_noKeyException
-	 * @covers	Ci\UtilityBundle\Exceptions\NoKeyException
-	 * @uses	Ci\UtilityBundle\Traits\DebugPrinter
+	 * @covers	Circle\UtilityBundle\Exceptions\NoKeyException
+	 * @uses	Circle\UtilityBundle\Traits\DebugPrinter
 	 *
-	 * @expectedException	Ci\UtilityBundle\Exceptions\NoKeyException
+	 * @expectedException	Circle\UtilityBundle\Exceptions\NoKeyException
 	 */
 	public function noKeyException() {
 		$this->exceptions->noKeyException("test");
@@ -71,9 +71,9 @@ class ExceptionsTest extends \PHPUnit_Framework_TestCase {
 	 * @test
 	 * @group	small
 	 * @covers	::_notInitializedException
-	 * @covers	Ci\UtilityBundle\Exceptions\NotInitializedException
+	 * @covers	Circle\UtilityBundle\Exceptions\NotInitializedException
 	 *
-	 * @expectedException	Ci\UtilityBundle\Exceptions\NotInitializedException
+	 * @expectedException	Circle\UtilityBundle\Exceptions\NotInitializedException
 	 */
 	public function notInitializedException() {
 		$this->exceptions->notInitializedException(new \stdClass, "test");
@@ -83,10 +83,10 @@ class ExceptionsTest extends \PHPUnit_Framework_TestCase {
 	 * @test
 	 * @group	small
 	 * @covers	::_wrongTypeException
-	 * @covers	Ci\UtilityBundle\Exceptions\WrongTypeException
-	 * @uses	Ci\UtilityBundle\Traits\DebugPrinter
+	 * @covers	Circle\UtilityBundle\Exceptions\WrongTypeException
+	 * @uses	Circle\UtilityBundle\Traits\DebugPrinter
 	 *
-	 * @expectedException	Ci\UtilityBundle\Exceptions\WrongTypeException
+	 * @expectedException	Circle\UtilityBundle\Exceptions\WrongTypeException
 	 */
 	public function wrongTypeException() {
 		$this->exceptions->wrongTypeException("test", new \stdClass(), "test");
@@ -96,12 +96,12 @@ class ExceptionsTest extends \PHPUnit_Framework_TestCase {
 	 * @test
 	 * @group	small
 	 * @covers	::_wrongKeyTypeException
-	 * @covers	Ci\UtilityBundle\Exceptions\WrongKeyTypeException
-	 * @uses	Ci\UtilityBundle\Traits\DebugPrinter
-	 * @uses	Ci\UtilityBundle\Exceptions\WrongTypeException
+	 * @covers	Circle\UtilityBundle\Exceptions\WrongKeyTypeException
+	 * @uses	Circle\UtilityBundle\Traits\DebugPrinter
+	 * @uses	Circle\UtilityBundle\Exceptions\WrongTypeException
 	 * @depends	wrongTypeException
 	 *
-	 * @expectedException	Ci\UtilityBundle\Exceptions\WrongKeyTypeException
+	 * @expectedException	Circle\UtilityBundle\Exceptions\WrongKeyTypeException
 	 */
 	public function wrongKeyTypeException() {
 		$this->exceptions->wrongKeyTypeException(new \stdClass(), "test");

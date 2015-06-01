@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,17 +18,17 @@
 /**
  * test case for Functional trait
  */
-namespace Ci\UtilityBundle\Tests\Traits;
+namespace Circle\UtilityBundle\Tests\Traits;
 
-use Ci\UtilityBundle\Tests\Fixtures\FunctionalPrivImpl;
+use Circle\UtilityBundle\Tests\Fixtures\FunctionalPrivImpl;
 
 /**
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Tests\Traits
+ * @package		Circle\UtilityBundle\Tests\Traits
  * @copyright	TeeAge-Beatz UG 2013-2014
  * @internal
  * 
- * @coversDefaultClass	Ci\UtilityBundle\Traits\FunctionalPriv
+ * @coversDefaultClass	Circle\UtilityBundle\Traits\FunctionalPriv
  * 
  * @SuppressWarnings("PHPMD.StaticAccess");
  */

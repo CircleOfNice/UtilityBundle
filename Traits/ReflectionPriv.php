@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,9 +18,9 @@
 /**
  * trait to be used when reflection is needed
  */
-namespace Ci\UtilityBundle\Traits;
+namespace Circle\UtilityBundle\Traits;
 
-use Ci\UtilityBundle\Container\ImmutableContainer;
+use Circle\UtilityBundle\Container\ImmutableContainer;
 /**
  * trait to be used when reflection is needed
  * with a specific class
@@ -30,7 +30,7 @@ use Ci\UtilityBundle\Container\ImmutableContainer;
  * or refactor them to the new wrapper
  *
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Traits
+ * @package		Circle\UtilityBundle\Traits
  * @copyright	TeeAge-Beatz UG 2014
  */
 trait ReflectionPriv {
@@ -104,7 +104,7 @@ trait ReflectionPriv {
 	 * returns all methods of this class wrapped 
 	 * in an immutable container
 	 * 
-	 * @return Ci\UtilityBundle\Container\ImmutableContainer
+	 * @return Circle\UtilityBundle\Container\ImmutableContainer
 	 */
 	private function _getMethods() {
 		return new ImmutableContainer($this->_reflect()->getMethods());
@@ -114,7 +114,7 @@ trait ReflectionPriv {
 	 * returns all properties of this class wrapped
 	 * in an immutable container
 	 *
-	 * @return Ci\UtilityBundle\Container\ImmutableContainer
+	 * @return Circle\UtilityBundle\Container\ImmutableContainer
 	 */
 	private function _getProperties() {
 		return new ImmutableContainer($this->_reflect()->getProperties());

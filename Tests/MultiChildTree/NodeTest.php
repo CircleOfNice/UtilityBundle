@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,33 +18,33 @@
 /**
  * test case for node
  */
-namespace Ci\UtilityBundle\Tests\MultiChildTree;
+namespace Circle\UtilityBundle\Tests\MultiChildTree;
 
-use Ci\UtilityBundle\Tests\Fixtures\NodeImpl;
-use Ci\UtilityBundle\MultiChildTree\Node;
+use Circle\UtilityBundle\Tests\Fixtures\NodeImpl;
+use Circle\UtilityBundle\MultiChildTree\Node;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * test for implementation of Node °Node
  * 
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Tests\MultiChildTree
+ * @package		Circle\UtilityBundle\Tests\MultiChildTree
  * @copyright	TeeAge-Beatz UG 2013-2014
  * @internal
  * 
- * @coversDefaultClass	Ci\UtilityBundle\MultiChildTree\Node
- * @uses				Ci\UtilityBundle\MultiChildTree\Node
- * @uses				Ci\UtilityBundle\Traits\DebugPrinter
- * @uses				Ci\UtilityBundle\Exceptions\Exceptions
- * @uses				Ci\UtilityBundle\Exceptions\NoKeyException
- * @uses				Ci\UtilityBundle\Exceptions\WrongTypeException
- * @uses				Ci\UtilityBundle\Exceptions\WrongKeyTypeException
+ * @coversDefaultClass	Circle\UtilityBundle\MultiChildTree\Node
+ * @uses				Circle\UtilityBundle\MultiChildTree\Node
+ * @uses				Circle\UtilityBundle\Traits\DebugPrinter
+ * @uses				Circle\UtilityBundle\Exceptions\Exceptions
+ * @uses				Circle\UtilityBundle\Exceptions\NoKeyException
+ * @uses				Circle\UtilityBundle\Exceptions\WrongTypeException
+ * @uses				Circle\UtilityBundle\Exceptions\WrongKeyTypeException
  * 
  * @SuppressWarnings("PHPMD")
  */
 class NodeTest extends \PHPUnit_Framework_TestCase {
 	private function createOne() {
-		$this->assertInstanceOf("Ci\UtilityBundle\Tree\Node", new NodeImpl());
+		$this->assertInstanceOf("Circle\UtilityBundle\Tree\Node", new NodeImpl());
 		return new NodeImpl();
 	}
 	
@@ -127,7 +127,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function getAllChildren(Node $node) {
 		$this->assertCount(6, $node->getAllChildren(new ArrayCollection()));
-		$this->assertContainsOnly("Ci\UtilityBundle\Tree\Node", $node->getAllChildren(new ArrayCollection()));
+		$this->assertContainsOnly("Circle\UtilityBundle\Tree\Node", $node->getAllChildren(new ArrayCollection()));
 	}
 	
 	/**
@@ -182,7 +182,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase {
 	 * @covers	::getChild 
 	 * @depends	construct
 	 * 
-	 * @expectedException Ci\UtilityBundle\Exceptions\NoKeyException
+	 * @expectedException Circle\UtilityBundle\Exceptions\NoKeyException
 	 */
 	public function getNonExistingChild(Node $node) {
 		$node->getChild("nonExistentKey");
@@ -194,7 +194,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase {
 	 * @covers	::hasChild
 	 * @depends	construct
 	 * 
-	 * @expectedException Ci\UtilityBundle\Exceptions\WrongKeyTypeException
+	 * @expectedException Circle\UtilityBundle\Exceptions\WrongKeyTypeException
 	 */
 	public function hasChildWithWrongType1(Node $node) {
 		$node->hasChild(1);
@@ -206,7 +206,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase {
 	 * @covers	::hasChild
 	 * @depends	construct
 	 * 
-	 * @expectedException Ci\UtilityBundle\Exceptions\WrongKeyTypeException
+	 * @expectedException Circle\UtilityBundle\Exceptions\WrongKeyTypeException
 	 */
 	public function hasChildWithWrongType2(Node $node) {
 		$node->hasChild(array());
@@ -218,7 +218,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase {
 	 * @covers	::hasChild
 	 * @depends	construct
 	 * 
-	 * @expectedException Ci\UtilityBundle\Exceptions\WrongKeyTypeException
+	 * @expectedException Circle\UtilityBundle\Exceptions\WrongKeyTypeException
 	 */
 	public function hasChildWithWrongType3(Node $node) {
 		$node->hasChild(new \stdClass());
@@ -230,7 +230,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase {
 	 * @covers	::hasChild
 	 * @depends	construct
 	 * 
-	 * @expectedException Ci\UtilityBundle\Exceptions\WrongKeyTypeException
+	 * @expectedException Circle\UtilityBundle\Exceptions\WrongKeyTypeException
 	 */
 	public function hasChildWithWrongType4(Node $node) {
 		$node->hasChild(false);
@@ -242,7 +242,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase {
 	 * @covers	::hasChild
 	 * @depends	construct
 	 * 
-	 * @expectedException Ci\UtilityBundle\Exceptions\WrongKeyTypeException
+	 * @expectedException Circle\UtilityBundle\Exceptions\WrongKeyTypeException
 	 */
 	public function hasChildWithWrongType5(Node $node) {
 		$node->hasChild(null);

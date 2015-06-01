@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,17 +18,17 @@
 /**
  * trait with debugging helper functions
  */
-namespace Ci\UtilityBundle\Traits;
+namespace Circle\UtilityBundle\Traits;
 
-use Ci\UtilityBundle\Interfaces\DeepPrintable;
-use Ci\UtilityBundle\Interfaces\Printable;
+use Circle\UtilityBundle\Interfaces\DeepPrintable;
+use Circle\UtilityBundle\Interfaces\Printable;
 
 /**
  * trait to be used when in need for helper functions
  * for debugging/stringifying objects
  *
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Traits
+ * @package		Circle\UtilityBundle\Traits
  * @copyright	TeeAge-Beatz UG 2014
  */
 trait DebugPrinter {

@@ -15,9 +15,9 @@ Contains Utilities such as queues and trees
 ###Step 1: Download CiUtilityBundle using composer
 Add CiUtilityBundle by running the command:
 ```
-php composer.phar require ci/utilitybundle
+php composer.phar require circle/utilitybundle
 ```
-Composer will install the bundle to your project's ```vendor/ci``` directory.
+Composer will install the bundle to your project's ```vendor/circle``` directory.
 
 ###Step 2: Enable the bundle
 Enable the bundle in the symfony kernel
@@ -30,7 +30,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Ci\UtilityBundle\CiUtilityBundle(),
+        new Circle\UtilityBundle\CircleUtilityBundle(),
     );
 }
 ```

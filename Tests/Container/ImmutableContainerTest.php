@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,18 +18,18 @@
 /**
  * test case for exceptions
  */
-namespace Ci\UtilityBundle\Tests\Container;
+namespace Circle\UtilityBundle\Tests\Container;
 
-use Ci\UtilityBundle\Container\ImmutableContainer;
-use Ci\UtilityBundle\Interfaces\Container;
+use Circle\UtilityBundle\Container\ImmutableContainer;
+use Circle\UtilityBundle\Interfaces\Container;
 
 /**
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Tests\Container
+ * @package		Circle\UtilityBundle\Tests\Container
  * @copyright	TeeAge-Beatz UG 2013-2014
  * @internal
  * 
- * @coversDefaultClass	Ci\UtilityBundle\Container\ImmutableContainer
+ * @coversDefaultClass	Circle\UtilityBundle\Container\ImmutableContainer
  * 
  * @SuppressWarnings("PHPMD.StaticAccess");
  */
@@ -44,7 +44,7 @@ class ImmutableContainerTest extends \PHPUnit_Framework_TestCase {
 	 * @covers	::__construct
 	 */	
 	public function construct() {
-		$this->assertInstanceOf("Ci\UtilityBundle\Container\ImmutableContainer", $this->createOne());
+		$this->assertInstanceOf("Circle\UtilityBundle\Container\ImmutableContainer", $this->createOne());
 		return $this->createOne(array(
 			"test"	=>	1,
 			"test2"	=>	2.0,
@@ -59,7 +59,7 @@ class ImmutableContainerTest extends \PHPUnit_Framework_TestCase {
 	 * @test
 	 * @group	small
 	 * @covers	::get
-	 * @uses	Ci\UtilityBundle\Container\ImmutableContainer::has
+	 * @uses	Circle\UtilityBundle\Container\ImmutableContainer::has
 	 * @depends	construct
 	 */
 	public function get(Container $container) {
@@ -75,13 +75,13 @@ class ImmutableContainerTest extends \PHPUnit_Framework_TestCase {
 	 * @test
 	 * @group	small
 	 * @covers	::has
-	 * @uses	Ci\UtilityBundle\Container\ImmutableContainer::get
-	 * @uses	Ci\UtilityBundle\Traits\DebugPrinter
-	 * @uses	Ci\UtilityBundle\Exceptions\NoKeyException
-	 * @uses	Ci\UtilityBundle\Exceptions\Exceptions
+	 * @uses	Circle\UtilityBundle\Container\ImmutableContainer::get
+	 * @uses	Circle\UtilityBundle\Traits\DebugPrinter
+	 * @uses	Circle\UtilityBundle\Exceptions\NoKeyException
+	 * @uses	Circle\UtilityBundle\Exceptions\Exceptions
 	 * @depends	construct
 	 * 
-	 * @expectedException Ci\UtilityBundle\Exceptions\NoKeyException
+	 * @expectedException Circle\UtilityBundle\Exceptions\NoKeyException
 	 */
 	public function has(Container $container) {
 		$container->get("test7");

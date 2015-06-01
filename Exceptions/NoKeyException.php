@@ -2,13 +2,13 @@
 /**
  * thrown if a value is not a key
  */
-namespace Ci\UtilityBundle\Exceptions;
+namespace Circle\UtilityBundle\Exceptions;
 
-use Ci\UtilityBundle\Traits\DebugPrinter;
+use Circle\UtilityBundle\Traits\DebugPrinter;
 
 /**
  *
- * @package   Ci\UtilityBundle
+ * @package   Circle\UtilityBundle
  * @author    Marco Sliwa <marco.sliwa@teeage-beatz.de>
  * @copyright 2014 TeeAge-Beatz UG (haftungsbeschraenkt)
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License

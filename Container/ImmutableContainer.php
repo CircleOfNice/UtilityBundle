@@ -2,17 +2,17 @@
 /**
  * immutable container
  */
-namespace Ci\UtilityBundle\Container;
+namespace Circle\UtilityBundle\Container;
 
-use Ci\UtilityBundle\Interfaces\Container;
+use Circle\UtilityBundle\Interfaces\Container;
 use Doctrine\Common\Collections\ArrayCollection;
-use Ci\UtilityBundle\Exceptions\Exceptions;
+use Circle\UtilityBundle\Exceptions\Exceptions;
 
 /**
  * implementation of container, that takes an array in its
  * constructor and sets all values of this
  *
- * @package   Ci\UtilityBundle
+ * @package   Circle\UtilityBundle
  * @author    Marco Sliwa <marco.sliwa@teeage-beatz.de>
  * @copyright 2014 TeeAge-Beatz UG (haftungsbeschraenkt)
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
@@ -37,7 +37,7 @@ final class ImmutableContainer implements Container {
 
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Interfaces\Container::get()
+	 * @see \Circle\UtilityBundle\Interfaces\Container::get()
 	 *
 	 * @param  string    $key
 	 */
@@ -47,7 +47,7 @@ final class ImmutableContainer implements Container {
 
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Interfaces\Container::toArray()
+	 * @see \Circle\UtilityBundle\Interfaces\Container::toArray()
 	 */
 	public function toArray() {
 		return $this->collection->toArray();

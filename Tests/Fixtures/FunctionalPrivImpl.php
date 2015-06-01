@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,15 +18,15 @@
 /**
  * public wrapper for functional trait
  */
-namespace Ci\UtilityBundle\Tests\Fixtures;
+namespace Circle\UtilityBundle\Tests\Fixtures;
 
-use Ci\UtilityBundle\Traits\FunctionalPriv;
+use Circle\UtilityBundle\Traits\FunctionalPriv;
 
 /**
  * public wrapper for functional trait
  * 
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Tests\Fixtures
+ * @package		Circle\UtilityBundle\Tests\Fixtures
  * @copyright	TeeAge-Beatz UG 2013-2014
  * @internal
  * 

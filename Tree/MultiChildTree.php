@@ -2,12 +2,12 @@
 /**
  * generic implementation of a tree
  */
-namespace Ci\UtilityBundle\Tree;
+namespace Circle\UtilityBundle\Tree;
 
-use Ci\UtilityBundle\Interfaces\GenericType;
-use Ci\UtilityBundle\Interfaces\Vector;
-use Ci\UtilityBundle\Interfaces\Branchable;
-use Ci\UtilityBundle\Interfaces\Printable;
+use Circle\UtilityBundle\Interfaces\GenericType;
+use Circle\UtilityBundle\Interfaces\Vector;
+use Circle\UtilityBundle\Interfaces\Branchable;
+use Circle\UtilityBundle\Interfaces\Printable;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -16,19 +16,19 @@ use Doctrine\Common\Collections\ArrayCollection;
  * children are defined by vectors.s
  *
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Tree
+ * @package		Circle\UtilityBundle\Tree
  * @copyright	TeeAge-Beatz UG 2014
  */
 abstract class MultiChildTree implements Tree, Branchable, Printable {
 	/**
-	 * @var	Ci\UtilityBundle\Tree\RootNode saves the root of this tree
+	 * @var	Circle\UtilityBundle\Tree\RootNode saves the root of this tree
 	 */
 	private $root;
 	
 	/**
 	 * initializes the tree with a RootNode
 	 * 
-	 * @param Ci\UtilityBundle\Tree\RootNode		$root
+	 * @param Circle\UtilityBundle\Tree\RootNode		$root
 	 */
 	final public function __construct(RootNode $root) {
 		$this->root	= $root;
@@ -36,7 +36,7 @@ abstract class MultiChildTree implements Tree, Branchable, Printable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Interfaces\Branchable::add()
+	 * @see \Circle\UtilityBundle\Interfaces\Branchable::add()
 	 */
 	public function add(Vector $path, GenericType $node) {
 		$this->getPriv($path)->addChild($path->last(), $node);
@@ -45,7 +45,7 @@ abstract class MultiChildTree implements Tree, Branchable, Printable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Interfaces\Branchable::get()
+	 * @see \Circle\UtilityBundle\Interfaces\Branchable::get()
 	 */
 	public function get(Vector $path) {
 		return $this->getPriv($path)->getChild($path->last());
@@ -53,7 +53,7 @@ abstract class MultiChildTree implements Tree, Branchable, Printable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Tree\Tree::getNodes()
+	 * @see \Circle\UtilityBundle\Tree\Tree::getNodes()
 	 */
 	final public function getNodes() {
 		return $this->root()->getAllChildren(new ArrayCollection());
@@ -61,7 +61,7 @@ abstract class MultiChildTree implements Tree, Branchable, Printable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Interfaces\Branchable::getAll()
+	 * @see \Circle\UtilityBundle\Interfaces\Branchable::getAll()
 	 */
 	final public function getAll() {
 		return $this->getNodes();
@@ -69,7 +69,7 @@ abstract class MultiChildTree implements Tree, Branchable, Printable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Interfaces\Printable::__toString()
+	 * @see \Circle\UtilityBundle\Interfaces\Printable::__toString()
 	 */
 	final public function __toString() {
 		return $this->root->__toString();
@@ -78,7 +78,7 @@ abstract class MultiChildTree implements Tree, Branchable, Printable {
 	/**
 	 * returns the root node of this tree
 	 * 
-	 * @return	Ci\UtilityBundle\Tree\RootNode
+	 * @return	Circle\UtilityBundle\Tree\RootNode
 	 */
 	final protected function root() {
 		return $this->root;
@@ -87,8 +87,8 @@ abstract class MultiChildTree implements Tree, Branchable, Printable {
 	/**
 	 * wrapper for getPrivRec
 	 * 
-	 * @param	Ci\UtilityBundle\Interfaces\Vector	$path
-	 * @return	Ci\UtilityBundle\Tree\Node
+	 * @param	Circle\UtilityBundle\Interfaces\Vector	$path
+	 * @return	Circle\UtilityBundle\Tree\Node
 	 */
 	private function getPriv(Vector $path) {
 		return $this->getPrivRec($this->root, $path->tail());
@@ -98,9 +98,9 @@ abstract class MultiChildTree implements Tree, Branchable, Printable {
 	 * returns a child at the position that is defined
 	 * by the vector. works recursively
 	 * 
-	 * @param	Ci\UtilityBundle\Tree\Node			$current
-	 * @param	Ci\UtilityBundle\Interfaces\Vector	$path
-	 * @return	Ci\UtilityBundle\Tree\Node
+	 * @param	Circle\UtilityBundle\Tree\Node			$current
+	 * @param	Circle\UtilityBundle\Interfaces\Vector	$path
+	 * @return	Circle\UtilityBundle\Tree\Node
 	 */
 	private function getPrivRec(Node $current, Vector $path) {
 		if($path->isEmpty()) return $current;

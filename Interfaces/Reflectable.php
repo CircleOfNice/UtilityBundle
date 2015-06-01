@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 /**
  * this type can reflect itself
  */
-namespace Ci\UtilityBundle\Interfaces;
+namespace Circle\UtilityBundle\Interfaces;
 
 use Doctrine\Common\Collections\ArrayCollection;
 /**
@@ -27,7 +27,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * about itself.
  *
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Interfaces
+ * @package		Circle\UtilityBundle\Interfaces
  * @copyright	TeeAge-Beatz UG 2014
  */
 interface Reflectable {
@@ -72,7 +72,7 @@ interface Reflectable {
 	 * returns all methods of this class
 	 * as reflectionmethods
 	 * 
-	 * @return	Ci\UtilityBundle\Container\Container
+	 * @return	Circle\UtilityBundle\Container\Container
 	 */
 	public function getMethods();
 	
@@ -81,7 +81,7 @@ interface Reflectable {
 	 * returns all properties of this class
 	 * as reflectionproperties
 	 *
-	 * @return	Ci\UtilityBundle\Container\Container
+	 * @return	Circle\UtilityBundle\Container\Container
 	 */
 	public function getProperties();
 }
