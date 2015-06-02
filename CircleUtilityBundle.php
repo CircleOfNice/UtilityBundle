@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 /**
  * implementation of symfony bundle type
  */
-namespace Ci\UtilityBundle;
+namespace Circle\UtilityBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -26,7 +26,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * implementation of symfony bundle type
  *
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Tree
+ * @package		Circle\UtilityBundle\Tree
  * @copyright	TeeAge-Beatz UG 2014
  */
-class CiUtilityBundle extends Bundle {}
+class CircleUtilityBundle extends Bundle {}

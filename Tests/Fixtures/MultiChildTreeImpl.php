@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,15 +18,15 @@
 /**
  * implementation of generictree
  */
-namespace Ci\UtilityBundle\Tests\Fixtures;
+namespace Circle\UtilityBundle\Tests\Fixtures;
 
-use Ci\UtilityBundle\Tree\MultiChildTree;
+use Circle\UtilityBundle\Tree\MultiChildTree;
 
 /**
  * mock implementation of generictree
  * 
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Tests\Fixtures
+ * @package		Circle\UtilityBundle\Tests\Fixtures
  * @copyright	TeeAge-Beatz UG 2013-2014
  * @internal
  * 
@@ -36,7 +36,7 @@ class MultiChildTreeImpl extends MultiChildTree {
 	/**
 	 * public wrapper for root
 	 * 
-	 * @return \Ci\UtilityBundle\Tree\Ci\UtilityBundle\Tree\RootNode
+	 * @return \Circle\UtilityBundle\Tree\Circle\UtilityBundle\Tree\RootNode
 	 */
 	public function getRoot() {
 		return $this->root();

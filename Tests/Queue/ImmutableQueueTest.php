@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,18 +18,18 @@
 /**
  * test case for Query
  */
-namespace Ci\UtilityBundle\Tests\Queue;
+namespace Circle\UtilityBundle\Tests\Queue;
 
-use Ci\UtilityBundle\Queue\ImmutableQueue;
+use Circle\UtilityBundle\Queue\ImmutableQueue;
 
 /**
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Tests\Queue
+ * @package		Circle\UtilityBundle\Tests\Queue
  * @copyright	TeeAge-Beatz UG 2013-2014
  * @internal
  * 
- * @coversDefaultClass	Ci\UtilityBundle\Queue\ImmutableQueue
- * @uses				Ci\UtilityBundle\Queue\ImmutableQueue
+ * @coversDefaultClass	Circle\UtilityBundle\Queue\ImmutableQueue
+ * @uses				Circle\UtilityBundle\Queue\ImmutableQueue
  * 
  * @SuppressWarnings("PHPMD.StaticAccess");
  */
@@ -43,7 +43,7 @@ class ImmutableQueueTest extends \PHPUnit_Framework_TestCase {
 	 * @covers	::__construct
 	 */	
 	public function construct() {
-		$this->assertInstanceOf("Ci\UtilityBundle\Queue\Queue", $this->createOne(array("test")));
+		$this->assertInstanceOf("Circle\UtilityBundle\Queue\Queue", $this->createOne(array("test")));
 		return $this->createOne(explode("\\", "Class\Ci\AnnotatableBundle"));
 	}
 	

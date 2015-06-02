@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 /**
  * list-like structure that uses vectors for positioning
  */
-namespace Ci\UtilityBundle\Interfaces;
+namespace Circle\UtilityBundle\Interfaces;
 
 /**
  * 
@@ -28,7 +28,7 @@ namespace Ci\UtilityBundle\Interfaces;
  * gets his childrent with this methods.
  * 
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Interfaces
+ * @package		Circle\UtilityBundle\Interfaces
  * @copyright	TeeAge-Beatz UG 2014
  */
 interface Branchable {
@@ -37,8 +37,8 @@ interface Branchable {
 	 * adds a type of generic nature at the position
 	 * that suits the vector.
 	 * 
-	 * @param	Ci\UtilityBundle\Interfaces\Vector		$path
-	 * @param	Ci\UtilityBundle\Interfaces\GenericType	$node
+	 * @param	Circle\UtilityBundle\Interfaces\Vector		$path
+	 * @param	Circle\UtilityBundle\Interfaces\GenericType	$node
 	 * @return	$this
 	 */
 	public function add(Vector $path, GenericType $node);
@@ -48,8 +48,8 @@ interface Branchable {
 	 * collection that is at the position, that is defined
 	 * by the given vector.
 	 * 
-	 * @param	Ci\UtilityBundle\Interfaces\Vector		$branch
-	 * @return	Ci\UtilityBundle\Interfaces\GenericType
+	 * @param	Circle\UtilityBundle\Interfaces\Vector		$branch
+	 * @return	Circle\UtilityBundle\Interfaces\GenericType
 	 */
 	public function get(Vector $branch);
 	

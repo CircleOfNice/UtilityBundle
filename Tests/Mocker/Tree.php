@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,13 +18,13 @@
 /**
  * mocker for tree classes
  */
-namespace Ci\UtilityBundle\Tests\Mocker;
+namespace Circle\UtilityBundle\Tests\Mocker;
 
 /**
  * mocker for tree classes
  * 
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\AnnotatableBundle\Tests\Mocker
+ * @package		Circle\UtilityBundle\Tests\Mocker
  * @copyright	TeeAge-Beatz UG 2013-2014
  * @internal
  * 
@@ -34,10 +34,10 @@ trait Tree {
 	/**
 	 * mocks a node
 	 * 
-	 * @return	Ci\UtilityBundle\Tree\Node
+	 * @return	Circle\UtilityBundle\Tree\Node
 	 */
 	protected function mockNode() {
-		$mock = $this->getMockBuilder("Ci\UtilityBundle\Tree\Node")
+		$mock = $this->getMockBuilder("Circle\UtilityBundle\Tree\Node")
 		             ->getMock();
 		return $mock;
 	}
@@ -46,10 +46,10 @@ trait Tree {
 	 * mocks a rootnode
 	 * 
 	 * @param	string	$string
-	 * @return	Ci\UtilityBundle\Tree\RootNode
+	 * @return	Circle\UtilityBundle\Tree\RootNode
 	 */
 	protected function mockRootNode($string = "") {
-		$mock = $this->getMock("Ci\UtilityBundle\Tree\RootNode");
+		$mock = $this->getMock("Circle\UtilityBundle\Tree\RootNode");
 		
 		$mock->expects($this->any())
 		     ->method("__toString")
@@ -61,10 +61,10 @@ trait Tree {
 	/**
 	 * mocks a tree
 	 * 
-	 * @return	Ci\UtilityBundle\Tree\Tree
+	 * @return	Circle\UtilityBundle\Tree\Tree
 	 */
 	protected function mockTree() {
-		$mock = $this->getMockBuilder("Ci\UtilityBundle\Tree\Tree")
+		$mock = $this->getMockBuilder("Circle\UtilityBundle\Tree\Tree")
 		             ->getMock();
 		return $mock;
 	}

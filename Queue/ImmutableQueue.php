@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,16 +18,16 @@
 /**
  * implementation of queue
  */
-namespace Ci\UtilityBundle\Queue;
+namespace Circle\UtilityBundle\Queue;
 
-use Ci\UtilityBundle\Interfaces\Printable;
+use Circle\UtilityBundle\Interfaces\Printable;
 
 /**
  * class implements interface queue with a constructor
  * that takes an array
  *
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Queue
+ * @package		Circle\UtilityBundle\Queue
  * @copyright	TeeAge-Beatz UG 2014
  */
 final class ImmutableQueue implements Queue, Printable {
@@ -47,7 +47,7 @@ final class ImmutableQueue implements Queue, Printable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Queue\Queue::isEmpty()
+	 * @see \Circle\UtilityBundle\Queue\Queue::isEmpty()
 	 * 
 	 * @return	boolean
 	 */
@@ -57,7 +57,7 @@ final class ImmutableQueue implements Queue, Printable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Queue\Queue::head()
+	 * @see \Circle\UtilityBundle\Queue\Queue::head()
 	 * 
 	 * @return	mixed
 	 */
@@ -67,9 +67,9 @@ final class ImmutableQueue implements Queue, Printable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Queue\Queue::tail()
+	 * @see \Circle\UtilityBundle\Queue\Queue::tail()
 	 * 
-	 * @return	Ci\UtilityBundle\Queue\Queue
+	 * @return	Circle\UtilityBundle\Queue\Queue
 	 */
 	public function tail() {
 		$list = array_merge(array(), $this->list);
@@ -79,7 +79,7 @@ final class ImmutableQueue implements Queue, Printable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Queue\Queue::__toString()
+	 * @see \Circle\UtilityBundle\Queue\Queue::__toString()
 	 * 
 	 * @return	string
 	 */
@@ -89,7 +89,7 @@ final class ImmutableQueue implements Queue, Printable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Queue\Queue::reduce()
+	 * @see \Circle\UtilityBundle\Queue\Queue::reduce()
 	 * 
 	 * @param	string	$glue
 	 * @return	string

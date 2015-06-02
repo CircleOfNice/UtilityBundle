@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 /**
  * interface for queryable types
  */
-namespace Ci\UtilityBundle\Interfaces;
+namespace Circle\UtilityBundle\Interfaces;
 
 /**
  *
@@ -26,7 +26,7 @@ namespace Ci\UtilityBundle\Interfaces;
  * a value of type result result
  *
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Interfaces
+ * @package		Circle\UtilityBundle\Interfaces
  * @copyright	TeeAge-Beatz UG 2014
  */
 interface Queryable {
@@ -36,7 +36,7 @@ interface Queryable {
 	 * a result
 	 * 
 	 * @param	string	$query
-	 * @return	Ci\UtilityBundle\Interfaces\Result
+	 * @return	Circle\UtilityBundle\Interfaces\Result
 	 */
 	public function query($query);
 }

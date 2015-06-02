@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,13 +18,13 @@
 /**
  * generic implementation of Node
  */
-namespace Ci\UtilityBundle\MultiChildTree;
+namespace Circle\UtilityBundle\MultiChildTree;
 
-use Ci\UtilityBundle\Tree\Node as NodeInterface;
+use Circle\UtilityBundle\Tree\Node as NodeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
-use Ci\UtilityBundle\Exceptions\Exceptions;
-use Ci\UtilityBundle\Interfaces\DeepPrintable;
-use Ci\UtilityBundle\Traits\DebugPrinter;
+use Circle\UtilityBundle\Exceptions\Exceptions;
+use Circle\UtilityBundle\Interfaces\DeepPrintable;
+use Circle\UtilityBundle\Traits\DebugPrinter;
 
 /**
  * a class that implements a generic version of a node
@@ -34,7 +34,7 @@ use Ci\UtilityBundle\Traits\DebugPrinter;
  * to build a tree.
  *
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\MultiChildTree
+ * @package		Circle\UtilityBundle\MultiChildTree
  * @copyright	TeeAge-Beatz UG 2014
  */
 abstract class Node implements NodeInterface, DeepPrintable {
@@ -47,7 +47,7 @@ abstract class Node implements NodeInterface, DeepPrintable {
 	private $children;
 	
 	/**
-	 * @var	Ci\UtilityBundle\Tree\Node					saves the parent
+	 * @var	Circle\UtilityBundle\Tree\Node					saves the parent
 	 */
 	private $parent;
 	
@@ -62,7 +62,7 @@ abstract class Node implements NodeInterface, DeepPrintable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Tree\Node::addChild()
+	 * @see \Circle\UtilityBundle\Tree\Node::addChild()
 	 * 
 	 * @param	string										$key
 	 */
@@ -77,7 +77,7 @@ abstract class Node implements NodeInterface, DeepPrintable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Tree\Node::hasChild()
+	 * @see \Circle\UtilityBundle\Tree\Node::hasChild()
 	 * 
 	 * @param	string										$key
 	 */
@@ -88,7 +88,7 @@ abstract class Node implements NodeInterface, DeepPrintable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Tree\Node::getParent()
+	 * @see \Circle\UtilityBundle\Tree\Node::getParent()
 	 */
 	final public function getParent() {
 		return $this->parent;
@@ -97,7 +97,7 @@ abstract class Node implements NodeInterface, DeepPrintable {
 	/**
 	 * sets the parent
 	 * 
-	 * @param	Ci\UtilityBundle\Tree\Node
+	 * @param	Circle\UtilityBundle\Tree\Node
 	 * @return	$this
 	 */
 	final private function setParent(NodeInterface $parent) {
@@ -107,10 +107,10 @@ abstract class Node implements NodeInterface, DeepPrintable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Tree\Node::getChild()
+	 * @see \Circle\UtilityBundle\Tree\Node::getChild()
 	 * 
 	 * @param	string										$key
-	 * @return	Ci\UtilityBundle\Tree\Node
+	 * @return	Circle\UtilityBundle\Tree\Node
 	 */
 	final public function getChild($key) {
 		return !$this->hasChild($key) ? $this->_noKeyException($key) : $this->getChildPriv($key);
@@ -118,7 +118,7 @@ abstract class Node implements NodeInterface, DeepPrintable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Tree\Node::getAllChildren()
+	 * @see \Circle\UtilityBundle\Tree\Node::getAllChildren()
 	 * 
 	 * @return	Doctrine\Common\Collections\ArrayCollection
 	 */
@@ -130,7 +130,7 @@ abstract class Node implements NodeInterface, DeepPrintable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Interfaces\Printable::toString()
+	 * @see \Circle\UtilityBundle\Interfaces\Printable::toString()
 	 * 
 	 * @return	string
 	 */
@@ -140,7 +140,7 @@ abstract class Node implements NodeInterface, DeepPrintable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Interfaces\DeepPrintable::toStringFlat()
+	 * @see \Circle\UtilityBundle\Interfaces\DeepPrintable::toStringFlat()
 	 * 
 	 * @return	string
 	 */
@@ -150,7 +150,7 @@ abstract class Node implements NodeInterface, DeepPrintable {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Interfaces\DeepPrintable::toStringDeep()
+	 * @see \Circle\UtilityBundle\Interfaces\DeepPrintable::toStringDeep()
 	 * 
 	 * @param	string										$tabs
 	 * @return	string
@@ -164,7 +164,7 @@ abstract class Node implements NodeInterface, DeepPrintable {
 	 * returns the child at position $key
 	 * 
 	 * @param	string										$key
-	 * @return	Ci\UtilityBundle\Tree\Node
+	 * @return	Circle\UtilityBundle\Tree\Node
 	 */
 	private function getChildPriv($key) {
 		return $this->children->get($key);

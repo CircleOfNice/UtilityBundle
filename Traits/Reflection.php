@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 /**
  * public reflection trait
  */
-namespace Ci\UtilityBundle\Traits;
+namespace Circle\UtilityBundle\Traits;
 
 use Doctrine\Common\Collections\ArrayCollection;
 /**
@@ -26,7 +26,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * needs to be public (e.q. implements interface Reflectable)
  *
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Traits
+ * @package		Circle\UtilityBundle\Traits
  * @copyright	TeeAge-Beatz UG 2014
  */
 trait Reflection {
@@ -34,7 +34,7 @@ trait Reflection {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see Ci\UtilityBundle\Traits\Reflection::_alias()
+	 * @see Circle\UtilityBundle\Traits\Reflection::_alias()
 	 */
 	public function alias() {
 		return $this->_alias();
@@ -42,7 +42,7 @@ trait Reflection {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see Ci\UtilityBundle\Traits\Reflection::_className()
+	 * @see Circle\UtilityBundle\Traits\Reflection::_className()
 	 */
 	public function className() {
 		return $this->_className();
@@ -50,7 +50,7 @@ trait Reflection {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Traits\Reflection::_exists()
+	 * @see \Circle\UtilityBundle\Traits\Reflection::_exists()
 	 * 
 	 * @param	string	$property
 	 */
@@ -60,7 +60,7 @@ trait Reflection {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Traits\Reflection::_reflect()
+	 * @see \Circle\UtilityBundle\Traits\Reflection::_reflect()
 	 */
 	public function reflect() {
 		return $this->_reflect();
@@ -68,7 +68,7 @@ trait Reflection {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Traits\Reflection::_getMethods()
+	 * @see \Circle\UtilityBundle\Traits\Reflection::_getMethods()
 	 */
 	public function getMethods() {
 		return $this->_getMethods();
@@ -76,7 +76,7 @@ trait Reflection {
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see \Ci\UtilityBundle\Traits\Reflection::_getProperties()
+	 * @see \Circle\UtilityBundle\Traits\Reflection::_getProperties()
 	 */
 	public function getProperties() {
 		return $this->_getProperties();

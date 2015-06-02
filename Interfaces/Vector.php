@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,15 +18,15 @@
 /**
  * type of all kinds of vectors
  */
-namespace Ci\UtilityBundle\Interfaces;
+namespace Circle\UtilityBundle\Interfaces;
 
-use Ci\UtilityBundle\Queue\Queue;
+use Circle\UtilityBundle\Queue\Queue;
 
 /**
  * a type describing a vector
  *
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Interfaces
+ * @package		Circle\UtilityBundle\Interfaces
  * @copyright	TeeAge-Beatz UG 2014
  */
 interface Vector extends Queue {

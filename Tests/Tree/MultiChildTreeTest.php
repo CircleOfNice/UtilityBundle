@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,22 +18,22 @@
 /**
  * test case for Query
  */
-namespace Ci\UtilityBundle\Tests\Tree;
+namespace Circle\UtilityBundle\Tests\Tree;
 
-use Ci\UtilityBundle\Tests\Fixtures\MultiChildTreeImpl;
-use Ci\UtilityBundle\Tree\MultiChildTree;
-use Ci\UtilityBundle\Tests\Mocker\Tree;
-use Ci\UtilityBundle\Tests\Mocker\Interfaces;
+use Circle\UtilityBundle\Tests\Fixtures\MultiChildTreeImpl;
+use Circle\UtilityBundle\Tree\MultiChildTree;
+use Circle\UtilityBundle\Tests\Mocker\Tree;
+use Circle\UtilityBundle\Tests\Mocker\Interfaces;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Tests\Tree
+ * @package		Circle\UtilityBundle\Tests\Tree
  * @copyright	TeeAge-Beatz UG 2013-2014
  * @internal
  * 
- * @coversDefaultClass	Ci\UtilityBundle\Tree\MultiChildTree
- * @uses				Ci\UtilityBundle\Tree\MultiChildTree::__construct
+ * @coversDefaultClass	Circle\UtilityBundle\Tree\MultiChildTree
+ * @uses				Circle\UtilityBundle\Tree\MultiChildTree::__construct
  * 
  * @SuppressWarnings("PHPMD.StaticAccess");
  */
@@ -51,7 +51,7 @@ class MultiChildTreeTest extends \PHPUnit_Framework_TestCase {
 	 * @covers	::__construct
 	 */	
 	public function construct() {
-		$this->assertInstanceOf("Ci\UtilityBundle\Tree\Tree", $this->createOne($this->mockRootNode()));
+		$this->assertInstanceOf("Circle\UtilityBundle\Tree\Tree", $this->createOne($this->mockRootNode()));
 		return $this->createOne($this->mockRootNode());
 	}
 	
@@ -80,7 +80,7 @@ class MultiChildTreeTest extends \PHPUnit_Framework_TestCase {
 	 * @group	small
 	 * @covers	::getNodes
 	 * @covers	::getAll
-	 * @uses	Ci\UtilityBundle\Tree\MultiChildTree::root
+	 * @uses	Circle\UtilityBundle\Tree\MultiChildTree::root
 	 * @depends	construct
 	 */
 	public function getNodesAndGetAll(MultiChildTree $tree) {
@@ -99,7 +99,7 @@ class MultiChildTreeTest extends \PHPUnit_Framework_TestCase {
 	 * @covers	::get
 	 * @covers	::getPriv
 	 * @covers	::getPrivRec
-	 * @uses	Ci\UtilityBundle\Tree\MultiChildTree::root
+	 * @uses	Circle\UtilityBundle\Tree\MultiChildTree::root
 	 * @depends	construct
 	 */
 	public function get(MultiChildTree $tree) {
@@ -116,10 +116,10 @@ class MultiChildTreeTest extends \PHPUnit_Framework_TestCase {
 	 * @test
 	 * @group	small
 	 * @covers	::add
-	 * @uses	Ci\UtilityBundle\Tree\MultiChildTree::root
-	 * @uses	Ci\UtilityBundle\Tree\MultiChildTree::get
-	 * @uses	Ci\UtilityBundle\Tree\MultiChildTree::getPriv
-	 * @uses	Ci\UtilityBundle\Tree\MultiChildTree::getPrivRec
+	 * @uses	Circle\UtilityBundle\Tree\MultiChildTree::root
+	 * @uses	Circle\UtilityBundle\Tree\MultiChildTree::get
+	 * @uses	Circle\UtilityBundle\Tree\MultiChildTree::getPriv
+	 * @uses	Circle\UtilityBundle\Tree\MultiChildTree::getPrivRec
 	 * @depends	get
 	 */
 	public function add(MultiChildTree $tree) {

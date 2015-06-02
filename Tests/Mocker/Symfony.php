@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,13 +18,13 @@
 /**
  * mocker for symfony classes
 */
-namespace Ci\UtilityBundle\Tests\Mocker;
+namespace Circle\UtilityBundle\Tests\Mocker;
 
 /**
  * mocker for symfony classes
  *
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\AnnotatableBundle\Tests\Mocker
+ * @package		Circle\UtilityBundleBundle\Tests\Mocker
  * @copyright	TeeAge-Beatz UG 2013-2014
  * @internal
  *

@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 /**
  * interface for queues
  */
-namespace Ci\UtilityBundle\Queue;
+namespace Circle\UtilityBundle\Queue;
 
 /**
  * 
@@ -27,7 +27,7 @@ namespace Ci\UtilityBundle\Queue;
  * the tail and the object itself is immutable
  * 
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Queue
+ * @package		Circle\UtilityBundle\Queue
  * @copyright	TeeAge-Beatz UG 2014
  */
 interface Queue {
@@ -44,7 +44,7 @@ interface Queue {
 	 * returns all elements but the first as a
 	 * new queue
 	 * 
-	 * @return	Ci\UtilityBundle\Queue\Queue
+	 * @return	Circle\UtilityBundle\Queue\Queue
 	 */
 	public function tail();
 	

@@ -1,6 +1,6 @@
 <?php
 /*
- * Ci\UtilityBundle provides a set of reusable php/symfony utilities
+ * Circle\UtilityBundle provides a set of reusable php/symfony utilities
  * (C) 2014 TeeAge-Beatz UG
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,18 +18,18 @@
 /**
  * test case for DebugPrinter
  */
-namespace Ci\UtilityBundle\Tests\Traits;
+namespace Circle\UtilityBundle\Tests\Traits;
 
-use Ci\UtilityBundle\Tests\Fixtures\DebugPrinterImpl;
-use Ci\UtilityBundle\Tests\Mocker\Interfaces;
+use Circle\UtilityBundle\Tests\Fixtures\DebugPrinterImpl;
+use Circle\UtilityBundle\Tests\Mocker\Interfaces;
 
 /**
  * @author		Marco Sliwa <marco.sliwa@teeage-beatz.de>
- * @package		Ci\UtilityBundle\Tests\Traits
+ * @package		Circle\UtilityBundle\Tests\Traits
  * @copyright	TeeAge-Beatz UG 2013-2014
  * @internal
  * 
- * @coversDefaultClass	Ci\UtilityBundle\Traits\DebugPrinter
+ * @coversDefaultClass	Circle\UtilityBundle\Traits\DebugPrinter
  * 
  * @SuppressWarnings("PHPMD.StaticAccess");
  */
@@ -81,7 +81,7 @@ class DebugPrinterTest extends \PHPUnit_Framework_TestCase {
 	 * @test
 	 * @group	small
 	 * @covers	::_toStringDeep
-	 * @uses	Ci\UtilityBundle\Traits\DebugPrinter::toStringFlat
+	 * @uses	Circle\UtilityBundle\Traits\DebugPrinter::toStringFlat
 	 * @depends	toStringFlat
 	 */
 	public function toStringDeepPriv() {
