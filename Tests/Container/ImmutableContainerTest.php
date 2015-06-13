@@ -103,4 +103,15 @@ class ImmutableContainerTest extends \PHPUnit_Framework_TestCase {
 			"test6"	=>	"test"
 		), $container->toArray());
 	}
+
+	/**
+	 * @test
+	 * @group	small
+	 * @covers	::contains
+	 * @depends	construct
+	 */
+	public function containsElement(Container $container) {
+		$this->assertTrue($container->contains(2.0));
+		$this->assertFalse($container->contains('doesNotContain'));
+	}
 }

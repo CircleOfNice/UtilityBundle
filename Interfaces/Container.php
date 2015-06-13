@@ -49,4 +49,12 @@ interface Container {
 	 * @return	array
 	 */
 	public function toArray();
+
+	/**
+	 * returns if the container contains the given element
+	 *
+	 * @param  mixed $element
+	 * @return bool
+	 */
+	public function contains($element);
 }
