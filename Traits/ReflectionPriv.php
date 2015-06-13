@@ -136,11 +136,10 @@ trait ReflectionPriv {
 	 *
 	 * @SuppressWarnings("PHPMD.StaticAccess");
 	 *
-	 * @param  bool $deep
 	 * @return ImmutableContainer
 	 */
-	private function _getTraits($deep) {
-		return new ImmutableContainer($deep ? $this->_getAllTraits($this->_reflect()) : $this->_reflect()->getTraits());
+	private function _getTraits() {
+		return new ImmutableContainer($this->_getAllTraits($this->_reflect()));
 	}
 
 	/**
@@ -149,11 +148,10 @@ trait ReflectionPriv {
 	 *
 	 * @SuppressWarnings("PHPMD.StaticAccess");
 	 *
-	 * @param  bool $deep
 	 * @return ImmutableContainer
 	 */
-	private function _getTraitNames($deep) {
-		return new ImmutableContainer($deep ? $this->_getAllTraitNames($this->_reflect()) : $this->_reflect()->getTraitNames());
+	private function _getTraitNames() {
+		return new ImmutableContainer($this->_getAllTraitNames($this->_reflect()));
 	}
 
 	/**
@@ -166,6 +164,7 @@ trait ReflectionPriv {
 	 */
 	private function _getAllTraitNames(\ReflectionClass $class, array $traits = array()) {
 		foreach ($class->getTraits() as $trait) $traits = $this->_getAllTraitNames($trait, $traits);
+		$traits = $class->getParentClass() instanceof \ReflectionClass ? $this->_getAllTraitNames($class->getParentClass(), $traits) : $traits;
 		return $class->isTrait() ? array_merge($traits, array($class->getName())) : $traits;
 	}
 
@@ -179,7 +178,7 @@ trait ReflectionPriv {
 	 */
 	private function _getAllTraits(\ReflectionClass $class, array $traits = array()) {
 		foreach ($class->getTraits() as $trait) $traits = $this->_getAllTraits($trait, $traits);
-		$traits = $class->getParentClass() instanceof \ReflectionClass ? $this->_getAllTraits($class) : $traits;
+		$traits = $class->getParentClass() instanceof \ReflectionClass ? $this->_getAllTraits($class->getParentClass(), $traits) : $traits;
 		return $class->isTrait() ? array_merge($traits, array($class)) : $traits;
 	}
 

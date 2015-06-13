@@ -87,16 +87,16 @@ trait Reflection {
 	 * (non-PHPdoc)
 	 * @see \Circle\UtilityBundle\Traits\Reflection::_getTraits()
 	 */
-	public function getTraits($deep = false) {
-		return $this->_getTraits($deep);
+	public function getTraits() {
+		return $this->_getTraits();
 	}
 
 	/**
 	 * (non-PHPdoc)
 	 * @see \Circle\UtilityBundle\Traits\Reflection::_getTraitNames()
 	 */
-	public function getTraitNames($deep = false) {
-		return $this->_getTraitNames($deep);
+	public function getTraitNames() {
+		return $this->_getTraitNames();
 	}
 
 	/**

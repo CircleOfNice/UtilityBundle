@@ -126,7 +126,6 @@ class ReflectionTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function getTraits() {
 		$this->assertInstanceOf("Circle\UtilityBundle\Container\ImmutableContainer", $this->createOne()->getTraits());
-		$this->assertInstanceOf("Circle\UtilityBundle\Container\ImmutableContainer", $this->createOne()->getTraits(true));
 	}
 
 	/**
@@ -140,7 +139,6 @@ class ReflectionTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function getTraitNames() {
 		$this->assertInstanceOf("Circle\UtilityBundle\Container\ImmutableContainer", $this->createOne()->getTraitNames());
-		$this->assertInstanceOf("Circle\UtilityBundle\Container\ImmutableContainer", $this->createOne()->getTraitNames(true));
 	}
 
 	/**
