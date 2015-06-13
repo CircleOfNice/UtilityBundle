@@ -21,15 +21,15 @@ final class ImmutableContainer implements Container {
 	use Exceptions;
 
 	/**
-	 * @var	Doctrine\Common\Collections\ArrayCollection stores the values of this container
+	 * @var	ArrayCollection stores the values of this container
 	 */
 	private $collection;
 
 	/**
 	 * constructor takes an array to set all values
 	 *
-	 * @param  array    $array
-	 * @return $this
+	 * @param  array $array
+	 * @return ImmutableContainer
 	 */
 	public function __construct(array $array) {
 		$this->collection = new ArrayCollection($array);
@@ -39,7 +39,8 @@ final class ImmutableContainer implements Container {
 	 * (non-PHPdoc)
 	 * @see \Circle\UtilityBundle\Interfaces\Container::get()
 	 *
-	 * @param  string    $key
+	 * @param  string $key
+	 * @return mixed
 	 */
 	public function get($key) {
 		return $this->has($key) ? $this->collection->get($key) : $this->_noKeyException($key);
@@ -56,7 +57,7 @@ final class ImmutableContainer implements Container {
 	/**
 	 * checks if $key exists
 	 *
-	 * @param  string    $key
+	 * @param  string $key
 	 * @return boolean
 	 */
 	private function has($key) {

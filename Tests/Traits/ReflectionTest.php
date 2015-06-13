@@ -114,4 +114,44 @@ class ReflectionTest extends \PHPUnit_Framework_TestCase {
 	public function getProperties() {
 		$this->assertInstanceOf("Circle\UtilityBundle\Container\ImmutableContainer", $this->createOne()->getProperties());
 	}
+
+	/**
+	 * @test
+	 * @group	small
+	 * @covers	::getTraits
+	 * @covers	Circle\UtilityBundle\Traits\ReflectionPriv::_getTraits
+	 * @covers	Circle\UtilityBundle\Traits\ReflectionPriv::_getAllTraits
+	 * @depends	reflect
+	 * @uses	Circle\UtilityBundle\Container\ImmutableContainer
+	 */
+	public function getTraits() {
+		$this->assertInstanceOf("Circle\UtilityBundle\Container\ImmutableContainer", $this->createOne()->getTraits());
+		$this->assertInstanceOf("Circle\UtilityBundle\Container\ImmutableContainer", $this->createOne()->getTraits(true));
+	}
+
+	/**
+	 * @test
+	 * @group	small
+	 * @covers	::getTraitNames
+	 * @covers	Circle\UtilityBundle\Traits\ReflectionPriv::_getTraitNames
+	 * @covers	Circle\UtilityBundle\Traits\ReflectionPriv::_getAllTraitNames
+	 * @depends	reflect
+	 * @uses	Circle\UtilityBundle\Container\ImmutableContainer
+	 */
+	public function getTraitNames() {
+		$this->assertInstanceOf("Circle\UtilityBundle\Container\ImmutableContainer", $this->createOne()->getTraitNames());
+		$this->assertInstanceOf("Circle\UtilityBundle\Container\ImmutableContainer", $this->createOne()->getTraitNames(true));
+	}
+
+	/**
+	 * @test
+	 * @group	small
+	 * @covers	::getInterfaceNames
+	 * @covers	Circle\UtilityBundle\Traits\ReflectionPriv::_getInterfaceNames
+	 * @depends	reflect
+	 * @uses	Circle\UtilityBundle\Container\ImmutableContainer
+	 */
+	public function getInterfaceNames() {
+		$this->assertInstanceOf("Circle\UtilityBundle\Container\ImmutableContainer", $this->createOne()->getInterfaceNames());
+	}
 }
