@@ -34,6 +34,12 @@ use Circle\UtilityBundle\Container\ImmutableContainer;
  * @copyright	TeeAge-Beatz UG 2014
  */
 trait ReflectionPriv {
+
+	/**
+	 * @var \ReflectionClass
+	 */
+	private $reflection;
+
 	/**
 	 * returns the alias string of the using
 	 * object
@@ -85,7 +91,7 @@ trait ReflectionPriv {
 	 * @return \ReflectionClass
 	 */
 	private function _reflect() {
-		return new \ReflectionClass($this);
+		return $this->reflection = empty($this->reflection) ? new \ReflectionClass($this) : $this->reflection;
 	}
 	
 	/**
@@ -103,6 +109,8 @@ trait ReflectionPriv {
 	/**
 	 * returns all methods of this class wrapped 
 	 * in an immutable container
+	 *
+	 * @SuppressWarnings("PHPMD.StaticAccess");
 	 * 
 	 * @return Circle\UtilityBundle\Container\ImmutableContainer
 	 */
@@ -114,9 +122,74 @@ trait ReflectionPriv {
 	 * returns all properties of this class wrapped
 	 * in an immutable container
 	 *
+	 * @SuppressWarnings("PHPMD.StaticAccess");
+	 *
 	 * @return Circle\UtilityBundle\Container\ImmutableContainer
 	 */
 	private function _getProperties() {
 		return new ImmutableContainer($this->_reflect()->getProperties());
+	}
+
+	/**
+	 * returns all traits of this class wrapped
+	 * in an immutable container
+	 *
+	 * @SuppressWarnings("PHPMD.StaticAccess");
+	 *
+	 * @return ImmutableContainer
+	 */
+	private function _getTraits() {
+		return new ImmutableContainer($this->_getAllTraits($this->_reflect()));
+	}
+
+	/**
+	 * returns all traits names of this class wrapped
+	 * in an immutable container
+	 *
+	 * @SuppressWarnings("PHPMD.StaticAccess");
+	 *
+	 * @return ImmutableContainer
+	 */
+	private function _getTraitNames() {
+		return new ImmutableContainer($this->_getAllTraitNames($this->_reflect()));
+	}
+
+	/**
+	 * returns all trait names of this class and all
+	 * trait names used in the traits used by the class
+	 *
+	 * @param  \ReflectionClass $class
+	 * @param  string[]         $traits
+	 * @return string[]
+	 */
+	private function _getAllTraitNames(\ReflectionClass $class, array $traits = array()) {
+		foreach ($class->getTraits() as $trait) $traits = $this->_getAllTraitNames($trait, $traits);
+		$traits = $class->getParentClass() instanceof \ReflectionClass ? $this->_getAllTraitNames($class->getParentClass(), $traits) : $traits;
+		return $class->isTrait() ? array_merge($traits, array($class->getName())) : $traits;
+	}
+
+	/**
+	 * returns all traits of this class and all
+	 * traits used in the traits used by the class
+	 *
+	 * @param  \ReflectionClass   $class
+	 * @param  \ReflectionClass[] $traits
+	 * @return \ReflectionClass[]
+	 */
+	private function _getAllTraits(\ReflectionClass $class, array $traits = array()) {
+		foreach ($class->getTraits() as $trait) $traits = $this->_getAllTraits($trait, $traits);
+		$traits = $class->getParentClass() instanceof \ReflectionClass ? $this->_getAllTraits($class->getParentClass(), $traits) : $traits;
+		return $class->isTrait() ? array_merge($traits, array($class)) : $traits;
+	}
+
+	/**
+	 * returns all interface names
+	 *
+	 * @SuppressWarnings("PHPMD.StaticAccess");
+	 *
+	 * @return ImmutableContainer
+	 */
+	private function _getInterfaceNames() {
+		return new ImmutableContainer($this->_reflect()->getInterfaceNames());
 	}
 }
