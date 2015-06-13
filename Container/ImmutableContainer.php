@@ -38,12 +38,17 @@ final class ImmutableContainer implements Container {
 	/**
 	 * (non-PHPdoc)
 	 * @see \Circle\UtilityBundle\Interfaces\Container::get()
-	 *
-	 * @param  string $key
-	 * @return mixed
 	 */
 	public function get($key) {
 		return $this->has($key) ? $this->collection->get($key) : $this->_noKeyException($key);
+	}
+
+	/**
+	 * (non-PHPdoc)
+	 * @see \Circle\UtilityBundle\Interfaces\Container::contains()
+	 */
+	public function contains($element) {
+		return $this->collection->contains($element);
 	}
 
 	/**
