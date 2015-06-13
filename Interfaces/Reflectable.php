@@ -20,7 +20,8 @@
  */
 namespace Circle\UtilityBundle\Interfaces;
 
-use Doctrine\Common\Collections\ArrayCollection;
+use Circle\UtilityBundle\Interfaces\Container;
+
 /**
  *
  * a type that can give information
@@ -63,7 +64,7 @@ interface Reflectable {
 	 * returns the reflection class of
 	 * this object
 	 * 
-	 * @return	ReflectionClass
+	 * @return	\ReflectionClass
 	 */
 	public function reflect();
 	
@@ -72,7 +73,7 @@ interface Reflectable {
 	 * returns all methods of this class
 	 * as reflectionmethods
 	 * 
-	 * @return	Circle\UtilityBundle\Container\Container
+	 * @return	Container
 	 */
 	public function getMethods();
 	
@@ -81,7 +82,7 @@ interface Reflectable {
 	 * returns all properties of this class
 	 * as reflectionproperties
 	 *
-	 * @return	Circle\UtilityBundle\Container\Container
+	 * @return	Container
 	 */
 	public function getProperties();
 }

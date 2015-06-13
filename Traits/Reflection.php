@@ -52,7 +52,8 @@ trait Reflection {
 	 * (non-PHPdoc)
 	 * @see \Circle\UtilityBundle\Traits\Reflection::_exists()
 	 * 
-	 * @param	string	$property
+	 * @param  string $property
+	 * @return bool
 	 */
 	public function exists($property) {
 		return $this->_exists($property);
@@ -80,5 +81,29 @@ trait Reflection {
 	 */
 	public function getProperties() {
 		return $this->_getProperties();
+	}
+
+	/**
+	 * (non-PHPdoc)
+	 * @see \Circle\UtilityBundle\Traits\Reflection::_getTraits()
+	 */
+	public function getTraits() {
+		return $this->_getTraits();
+	}
+
+	/**
+	 * (non-PHPdoc)
+	 * @see \Circle\UtilityBundle\Traits\Reflection::_getTraitNames()
+	 */
+	public function getTraitNames() {
+		return $this->_getTraitNames();
+	}
+
+	/**
+	 * (non-PHPdoc)
+	 * @see \Circle\UtilityBundle\Traits\Reflection::_getInterfaceNames()
+	 */
+	public function getInterfaceNames($deep = false) {
+		return $this->_getInterfaceNames($deep);
 	}
 }
