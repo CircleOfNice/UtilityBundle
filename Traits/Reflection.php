@@ -103,7 +103,7 @@ trait Reflection {
 	 * (non-PHPdoc)
 	 * @see \Circle\UtilityBundle\Traits\Reflection::_getInterfaceNames()
 	 */
-	public function getInterfaceNames($deep = false) {
-		return $this->_getInterfaceNames($deep);
+	public function getInterfaceNames() {
+		return $this->_getInterfaceNames();
 	}
 }

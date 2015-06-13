@@ -85,4 +85,27 @@ interface Reflectable {
 	 * @return	Container
 	 */
 	public function getProperties();
+
+	/**
+	 * returns all traits of this class wrapped
+	 * in an immutable container
+	 *
+	 * @return Container
+	 */
+	public function getTraits();
+
+	/**
+	 * returns all traits names of this class wrapped
+	 * in an immutable container
+	 *
+	 * @return Container
+	 */
+	public function getTraitNames();
+
+	/**
+	 * returns all interface names
+	 *
+	 * @return Container
+	 */
+	public function getInterfaceNames();
 }
