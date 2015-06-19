@@ -103,7 +103,55 @@ trait Reflection {
 	 * (non-PHPdoc)
 	 * @see \Circle\UtilityBundle\Traits\Reflection::_getInterfaceNames()
 	 */
-	public function getInterfaceNames($deep = false) {
-		return $this->_getInterfaceNames($deep);
+	public function getInterfaceNames() {
+		return $this->_getInterfaceNames();
+	}
+
+	/**
+	 * (non-PHPdoc)
+	 * @see \Circle\UtilityBundle\Traits\Reflection::_usesTrait()
+	 */
+	public function usesTrait($traitNamespace) {
+		return $this->_usesTrait($traitNamespace);
+	}
+
+	/**
+	 * (non-PHPdoc)
+	 * @see \Circle\UtilityBundle\Traits\Reflection::_getUses()
+	 */
+	public function getUses() {
+		return $this->_getUses();
+	}
+
+	/**
+	 * (non-PHPdoc)
+	 * @see \Circle\UtilityBundle\Traits\Reflection::_getUses()
+	 */
+	public function hasMethod($name) {
+		return $this->_hasMethod($name);
+	}
+
+	/**
+	 * (non-PHPdoc)
+	 * @see \Circle\UtilityBundle\Traits\Reflection::_getUses()
+	 */
+	public function getMethod($name) {
+		return $this->_getMethod($name);
+	}
+
+	/**
+	 * (non-PHPdoc)
+	 * @see \Circle\UtilityBundle\Traits\Reflection::_getUses()
+	 */
+	public function getProperty($name) {
+		return $this->_getProperty($name);
+	}
+
+	/**
+	 * (non-PHPdoc)
+	 * @see \Circle\UtilityBundle\Traits\Reflection::_getUses()
+	 */
+	public function hasProperty($name) {
+		return $this->_hasProperty($name);
 	}
 }

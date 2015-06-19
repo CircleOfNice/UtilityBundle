@@ -85,4 +85,76 @@ interface Reflectable {
 	 * @return	Container
 	 */
 	public function getProperties();
+
+	/**
+	 * returns all traits of this class wrapped
+	 * in an immutable container
+	 *
+	 * @return Container
+	 */
+	public function getTraits();
+
+	/**
+	 * returns all traits names of this class wrapped
+	 * in an immutable container
+	 *
+	 * @return Container
+	 */
+	public function getTraitNames();
+
+	/**
+	 * returns all interface names
+	 *
+	 * @return Container
+	 */
+	public function getInterfaceNames();
+
+	/**
+	 * returns if the given trait is used or not
+	 *
+	 * @param  string $traitNamespace
+	 * @return bool
+	 */
+	public function usesTrait($traitNamespace);
+
+	/**
+	 * returns all used namespaces
+	 *
+	 * @return string[]
+	 */
+	public function getUses();
+
+	/**
+	 * returns if the class has implemented the given
+	 * method
+	 *
+	 * @param  string $name
+	 * @return bool
+	 */
+	public function hasMethod($name);
+
+	/**
+	 * returns the given method
+	 *
+	 * @param  string $name
+	 * @return \ReflectionMethod
+	 */
+	public function getMethod($name);
+
+	/**
+	 * returns the given property
+	 *
+	 * @param  string $name
+	 * @return \ReflectionProperty
+	 */
+	public function getProperty($name);
+
+	/**
+	 * returns if the class has implemented the given
+	 * property
+	 *
+	 * @param  string $name
+	 * @return bool
+	 */
+	public function hasProperty($name);
 }

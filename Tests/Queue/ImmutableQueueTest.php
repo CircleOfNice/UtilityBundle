@@ -44,7 +44,7 @@ class ImmutableQueueTest extends \PHPUnit_Framework_TestCase {
 	 */	
 	public function construct() {
 		$this->assertInstanceOf("Circle\UtilityBundle\Queue\Queue", $this->createOne(array("test")));
-		return $this->createOne(explode("\\", "Class\Ci\AnnotatableBundle"));
+		return $this->createOne(explode("\\", "Class\Ci\AnnotationBundle"));
 	}
 	
 	/**
@@ -75,11 +75,11 @@ class ImmutableQueueTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function tail(ImmutableQueue $queue) {
 		$queue = $queue->tail();
-		$this->assertEquals($this->createOne(explode("\\", "Ci\AnnotatableBundle")), $queue);
+		$this->assertEquals($this->createOne(explode("\\", "Ci\AnnotationBundle")), $queue);
 		$this->assertEquals("Ci", $queue->head());
 		$queue = $queue->tail();
-		$this->assertEquals($this->createOne(explode("\\", "AnnotatableBundle")), $queue);
-		$this->assertEquals("AnnotatableBundle", $queue->head());
+		$this->assertEquals($this->createOne(explode("\\", "AnnotationBundle")), $queue);
+		$this->assertEquals("AnnotationBundle", $queue->head());
 		$queue = $queue->tail();
 		return $queue;
 	}
@@ -104,7 +104,7 @@ class ImmutableQueueTest extends \PHPUnit_Framework_TestCase {
 	 * @depends	construct
 	 */
 	public function toStringTest(ImmutableQueue $queue) {
-		$this->assertEquals("Queue('Class', 'Ci', 'AnnotatableBundle')\n", $queue."");
+		$this->assertEquals("Queue('Class', 'Ci', 'AnnotationBundle')\n", $queue."");
 	}
 	
 	/**
@@ -113,6 +113,6 @@ class ImmutableQueueTest extends \PHPUnit_Framework_TestCase {
 	 * @depends	construct
 	 */
 	public function reduce(ImmutableQueue $queue) {
-		$this->assertEquals("Class\Ci\AnnotatableBundle", $queue->reduce("\\"));
+		$this->assertEquals("Class\Ci\AnnotationBundle", $queue->reduce("\\"));
 	}
 }
