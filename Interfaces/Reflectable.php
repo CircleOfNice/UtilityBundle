@@ -20,8 +20,6 @@
  */
 namespace Circle\UtilityBundle\Interfaces;
 
-use Circle\UtilityBundle\Interfaces\Container;
-
 /**
  *
  * a type that can give information
@@ -108,4 +106,52 @@ interface Reflectable {
 	 * @return Container
 	 */
 	public function getInterfaceNames();
+	/**
+	 * returns if the given trait is used or not
+	 *
+	 * @param  string $traitNamespace
+	 * @return bool
+	 */
+	public function usesTrait($traitNamespace);
+
+	/**
+	 * returns all used namespaces
+	 *
+	 * @return string[]
+	 */
+	public function getUses();
+
+	/**
+	 * returns if the class has implemented the given
+	 * method
+	 *
+	 * @param  string $name
+	 * @return bool
+	 */
+	public function hasMethod($name);
+
+	/**
+	 * returns the given method
+	 *
+	 * @param  string $name
+	 * @return \ReflectionMethod
+	 */
+	public function getMethod($name);
+
+	/**
+	 * returns the given property
+	 *
+	 * @param  string $name
+	 * @return \ReflectionProperty
+	 */
+	public function getProperty($name);
+
+	/**
+	 * returns if the class has implemented the given
+	 * property
+	 *
+	 * @param  string $name
+	 * @return bool
+	 */
+	public function hasProperty($name);
 }

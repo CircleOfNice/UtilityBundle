@@ -21,6 +21,8 @@
 namespace Circle\UtilityBundle\Traits;
 
 use Circle\UtilityBundle\Container\ImmutableContainer;
+use Doctrine\Common\Annotations\PhpParser;
+
 /**
  * trait to be used when reflection is needed
  * with a specific class
@@ -191,5 +193,71 @@ trait ReflectionPriv {
 	 */
 	private function _getInterfaceNames() {
 		return new ImmutableContainer($this->_reflect()->getInterfaceNames());
+	}
+
+	/**
+	 * returns if the given trait is used or not
+	 *
+	 * @param  string $traitNamespace
+	 * @return bool
+	 */
+	private function _usesTrait($traitNamespace) {
+		if (!trait_exists($traitNamespace)) return false;
+
+		$class   = $this->_reflect();
+		foreach (get_class_methods($traitNamespace) as $methodName) if (!$class->hasMethod($methodName)) return false;
+		return true;
+	}
+
+	/**
+	 * returns all used namespaces
+	 *
+	 * @return string[]
+	 */
+	private function _getUses() {
+		$parser  = new PhpParser();
+		return $parser->parseClass($this->_reflect());
+	}
+
+	/**
+	 * returns if the class has implemented the given
+	 * method
+	 *
+	 * @param  string $name
+	 * @return bool
+	 */
+	private function _hasMethod($name) {
+		return $this->_reflect()->hasMethod($name);
+	}
+
+	/**
+	 * returns the given method
+	 *
+	 * @param  string $name
+	 * @return \ReflectionMethod
+	 */
+	private function _getMethod($name) {
+		return $this->_reflect()->getMethod($name);
+	}
+
+	/**
+	 * returns if the class has implemented the given
+	 * property
+	 *
+	 * @param  string $name
+	 * @return bool
+	 */
+	private function _hasProperty($name) {
+		return $this->_reflect()->hasProperty($name);
+	}
+
+	/**
+	 * returns the given property
+	 *
+	 * @param  string $name
+	 * @return \ReflectionProperty
+	 */
+	private function _getProperty($name) {
+		return $this->_reflect()->getProperty($name);
 	}
 }

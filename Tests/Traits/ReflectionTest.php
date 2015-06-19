@@ -152,4 +152,73 @@ class ReflectionTest extends \PHPUnit_Framework_TestCase {
 	public function getInterfaceNames() {
 		$this->assertInstanceOf("Circle\UtilityBundle\Container\ImmutableContainer", $this->createOne()->getInterfaceNames());
 	}
+
+	/**
+	 * @test
+	 * @group	small
+	 * @covers	::usesTrait
+	 * @covers	Circle\UtilityBundle\Traits\ReflectionPriv::_usesTrait
+	 * @depends	reflect
+	 */
+	public function usesTrait() {
+		$this->assertTrue($this->createOne()->usesTrait('Circle\UtilityBundle\Traits\Reflection'));
+		$this->assertFalse($this->createOne()->usesTrait('MissingTrait'));
+	}
+
+	/**
+	 * @test
+	 * @group	small
+	 * @covers	::getUses
+	 * @covers	Circle\UtilityBundle\Traits\ReflectionPriv::_getUses
+	 * @depends	reflect
+	 */
+	public function getUses() {
+		$this->assertTrue(is_array($this->createOne()->getUses()));
+	}
+
+	/**
+	 * @test
+	 * @group	small
+	 * @covers	::hasMethod
+	 * @covers	Circle\UtilityBundle\Traits\ReflectionPriv::_hasMethod
+	 * @depends	reflect
+	 */
+	public function hasMethod() {
+		$this->assertTrue($this->createOne()->hasMethod('hasMethod'));
+		$this->assertFalse($this->createOne()->hasMethod('missingMethod'));
+	}
+
+	/**
+	 * @test
+	 * @group	small
+	 * @covers	::hasProperty
+	 * @covers	Circle\UtilityBundle\Traits\ReflectionPriv::_hasProperty
+	 * @depends	reflect
+	 */
+	public function hasProperty() {
+		$this->assertTrue($this->createOne()->hasProperty('property'));
+		$this->assertFalse($this->createOne()->hasProperty('missingProperty'));
+	}
+
+	/**
+	 * @test
+	 * @group	small
+	 * @covers	::getMethod
+	 * @covers	Circle\UtilityBundle\Traits\ReflectionPriv::_getMethod
+	 * @depends	reflect
+	 */
+	public function getMethod() {
+		$this->assertInstanceof('\ReflectionMethod', $this->createOne()->getMethod('getMethod'));
+	}
+
+	/**
+	 * @test
+	 * @group	small
+	 * @covers	::getProperty
+	 * @covers	Circle\UtilityBundle\Traits\ReflectionPriv::_getProperty
+	 * @depends	reflect
+	 */
+	public function getProperty() {
+		$this->assertInstanceof('\ReflectionProperty', $this->createOne()->getProperty('property'));
+	}
 }
