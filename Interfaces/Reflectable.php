@@ -20,8 +20,6 @@
  */
 namespace Circle\UtilityBundle\Interfaces;
 
-use Circle\UtilityBundle\Interfaces\Container;
-
 /**
  *
  * a type that can give information
@@ -108,7 +106,6 @@ interface Reflectable {
 	 * @return Container
 	 */
 	public function getInterfaceNames();
-
 	/**
 	 * returns if the given trait is used or not
 	 *

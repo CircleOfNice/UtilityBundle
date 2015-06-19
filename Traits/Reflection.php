@@ -20,7 +20,6 @@
  */
 namespace Circle\UtilityBundle\Traits;
 
-use Doctrine\Common\Collections\ArrayCollection;
 /**
  * trait for reflection to use if the reflection api
  * needs to be public (e.q. implements interface Reflectable)
